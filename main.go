@@ -3,20 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
-
+	"github.com/nofdev/bigbrother/conf"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
 
-func getExampleConf() (conf string) {
-	conf = `[DEFAULT]
-configration_path = /etc/bigbrother/bigbrother.conf
 
-[monitor]
-check_url = /status
-check_interval = 3s
-receive_string = Running`
-	return
-}
 
 var (
 	app                 = kingpin.New("bigbrother", "Bit brother is watching you!")
@@ -34,7 +25,7 @@ func main() {
 	case "daemon":
 		// TODO running as daemon
 	case "show example-conf":
-		fmt.Println(getExampleConf())
+		fmt.Println(conf.GetExampleConf())
 		if *showExampleConfSave {
 			// TODO save file
 		}

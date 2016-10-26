@@ -3,11 +3,10 @@ package main
 import (
 	"fmt"
 	"os"
+
 	"github.com/nofdev/bigbrother/conf"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
-
-
 
 var (
 	app                 = kingpin.New("bigbrother", "Bit brother is watching you!")

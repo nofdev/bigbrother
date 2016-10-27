@@ -17,7 +17,7 @@ receive_string = Running`
 
 // SaveConf save string to a file.
 func SaveConf(s string, path string) error {
-	err := ioutil.WriteFile(path, []byte(s), 0x644)
+	err := ioutil.WriteFile(path, []byte(s), 0644)
 	if err != nil {
 		panic(err)
 	} else {

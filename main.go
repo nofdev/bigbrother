@@ -26,7 +26,10 @@ func main() {
 	case "show example-conf":
 		fmt.Println(conf.GetExampleConf())
 		if *showExampleConfSave {
-			// TODO save file
+			_ = os.Mkdir("/etc/bigbrother", 0755)
+			if err := conf.SaveConf(conf.GetExampleConf(), "/etc/bigbrother/bigbrother.conf"); err !=nil {
+				panic(err)
+			}
 		}
 	}
 
